@@ -2,23 +2,23 @@ import bpy
 
 # List of Mayu shapekeys (_op ones already exist)
 mayu_keys = [
-    "mayu00_def_op",
-    "mayu01_angry_op",
-    "mayu02_worried_op",
-    "mayu03_bored_op",
-    "mayu04_doubtL_op",
-    "mayu05_doubtR_op",
-    "mayu06_thinkingL_op",
-    "mayu07_thinkingR_op",
-    "mayu08_angry2L_op",
-    "mayu09_angry2R_op",
-    "mayu10_serious_op",
-    "mayu11_anxious_op",
-    "mayu12_surprised_op",
-    "mayu13_disapointed_op",
-    "mayu14_smug_op",
-    "mayu15_winkL_op",
-    "mayu16_winkR_op",
+    "mayu00_def_op_0",
+    "mayu01_angry_op_0",
+    "mayu02_worried_op_0",
+    "mayu03_bored_op_0",
+    "mayu04_doubtL_op_0",
+    "mayu05_doubtR_op_0",
+    "mayu06_thinkingL_op_0",
+    "mayu07_thinkingR_op_0",
+    "mayu08_angry2L_op_0",
+    "mayu09_angry2R_op_0",
+    "mayu10_serious_op_0",
+    "mayu11_anxious_op_0",
+    "mayu12_surprised_op_0",
+    "mayu13_disapointed_op_0",
+    "mayu14_smug_op_0",
+    "mayu15_winkL_op_0",
+    "mayu16_winkR_op_0",
 ]
 
 # Eyebrow shapekeys that should always be added to the mix
@@ -52,7 +52,7 @@ for mayu in mayu_keys:
 
     # Create new shapekey from current mix
     new_key = obj.shape_key_add(from_mix=True)
-    new_name = mayu.replace("_op", "_cl")
+    new_name = mayu.replace("_op_0", "_cl_0")
     new_key.name = new_name
 
     # Reset for safety
@@ -67,4 +67,4 @@ for mayu in mayu_keys:
         if bpy.context.object.active_shape_key_index == target_index:
             break
 
-print("✅ Done: All _cl shapekeys created above their _op counterparts")
+print("✅ Done: All _cl_0 shapekeys created above their _op_0 counterparts")
