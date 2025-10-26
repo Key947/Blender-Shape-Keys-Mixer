@@ -1,27 +1,13 @@
 import bpy
 
-# List of Mayu shapekeys (_op ones already exist)
+# List of first mix of shapekeys
 mayu_keys = [
-    "mayuge.mayu00_def_op_0",
-    "mayuge.mayu01_angry_op_0",
-    "mayuge.mayu02_worried_op_0",
-    "mayuge.mayu03_bored_op_0",
-    "mayuge.mayu04_doubtL_op_0",
-    "mayuge.mayu05_doubtR_op_0",
-    "mayuge.mayu06_thinkingL_op_0",
-    "mayuge.mayu07_thinkingR_op_0",
-    "mayuge.mayu08_angry2L_op_0",
-    "mayuge.mayu09_angry2R_op_0",
-    "mayuge.mayu10_serious_op_0",
-    "mayuge.mayu11_anxious_op_0",
-    "mayuge.mayu12_surprised_op_0",
-    "mayuge.mayu13_disapointed_op_0",
-    "mayuge.mayu14_smug_op_0",
-    "mayuge.mayu15_winkL_op_0",
-    "mayuge.mayu16_winkR_op_0",
+    "name of your shape keys",
+    "name of your shape keys",
+    "name of your shape keys",
 ]
 
-# Eyebrow shapekeys that should always be added to the mix
+# List of second mix of shapekeys
 eyebrow_keys = {
     "EyeBrow_22_R(Offset_D)[M_Mayu]": 0.2,
     "EyeBrow_22_L(Offset_D)[M_Mayu]": 0.2,
@@ -42,7 +28,7 @@ for mayu in mayu_keys:
     for sk in kb:
         sk.value = 0.0
 
-    # Activate base mayu
+    # Activate
     kb[mayu].value = 1.0
 
     # Add eyebrows
@@ -52,7 +38,7 @@ for mayu in mayu_keys:
 
     # Create new shapekey from current mix
     new_key = obj.shape_key_add(from_mix=True)
-    new_name = mayu.replace("_op_0", "_cl_0")
+    new_name = mayu.replace("_op_0", "_cl_0")     # name based on corresponding shape keys in this case cl for closed position and op for open for ussually for eyes and mouth
     new_key.name = new_name
 
     # Reset for safety
